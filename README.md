@@ -83,6 +83,27 @@ Encoding of each instruction word is done using an **imaginary** base32 as defin
 ```
 so that each *word* can be encoded as 2 digits in this base (with leading ! as needed).
 
+## Macros - preprocess pass
+The macroses are declarations that, when called, will integrate the code inside the macro
+e.g.
+
+Before:
+```
+macr macro_name
+mov r1,r2
+endmacr
+
+...
+macro_name
+...
+```
+After:
+```
+...
+mov r1,r2
+...
+
+```
 ## Commands
 The commands allowed in bits 6-9 are:
 
